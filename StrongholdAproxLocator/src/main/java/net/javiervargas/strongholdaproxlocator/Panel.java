@@ -5,6 +5,7 @@
 package net.javiervargas.strongholdaproxlocator;
 
 import javax.swing.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static java.lang.Math.*;
@@ -160,16 +161,22 @@ public class Panel extends javax.swing.JPanel {
         double ValueToAddToAngle = 0;
         double AngleValue = 0;
         ArrayList<String> SingularStronghold = new ArrayList<>();
-        String FoundStronghold = positionPlayerXValue + " " + positionPlayerYValue + "i";
 
+        double XValue = positionPlayerXValue + 1;
+        AngleValue = Angle + ValueToAddToAngle;
+        ValueToAddToAngle = ValueToAddToAngle + AngleHowManyAdd;
+        String Complex = "X: " + positionPlayerXValue + " Z:" + positionPlayerYValue ;
+
+        Strongholds.add(Complex);
 
         for (int looper = 0; looper < Circle(CurrentCircle); looper++) {
-            double XValue = positionPlayerXValue + 1;
-            AngleValue = Angle + ValueToAddToAngle;
-            ValueToAddToAngle = ValueToAddToAngle + AngleHowManyAdd;
-            double NormalFormXValue = Magnitude*(cos(abs(AngleValue)));
-            double NormalFormYValue = Magnitude*(sin(abs(AngleValue)));
-            String Complex = NormalFormXValue + " " + NormalFormYValue + "i";
+             AngleValue = Angle + ValueToAddToAngle;
+             ValueToAddToAngle = ValueToAddToAngle + AngleHowManyAdd;
+             double NormalFormXValue = Magnitude*(cos(abs(AngleValue)));
+             NormalFormXValue = Math.round(NormalFormXValue*100)/100;
+             double NormalFormYValue = Magnitude*(sin(abs(AngleValue)));
+             NormalFormYValue = Math.round(NormalFormYValue*100)/100;
+             Complex = "X: " + NormalFormXValue + " Z:" + NormalFormYValue ;
 
             Strongholds.add(Complex);
 
