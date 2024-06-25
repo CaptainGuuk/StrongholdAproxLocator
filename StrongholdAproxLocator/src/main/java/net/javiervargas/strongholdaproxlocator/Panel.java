@@ -44,7 +44,7 @@ public class Panel extends javax.swing.JPanel {
 
         jLabel2.setText("Coordenada X");
 
-        jLabel3.setText("Coordenada Y");
+        jLabel3.setText("Coordenada Z");
 
         jLabel4.setText("Numero de circulo");
 
